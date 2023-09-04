@@ -72,15 +72,12 @@ always @ (posedge clk) begin
 end
 
 // 跳转不需要stall了
+// 先判断上一条或上上一条是不是相关的lw
 assign stall_signal = 
-	((mem_RegWrite && mem_lw) && (mem_reg_dst == rs)) ? 2'b10 :
-	((mem_RegWrite && mem_lw) && (mem_reg_dst == rt)) ? 2'b10 :
 	((ex_RegWrite && ex_lw) && (ex_reg_dst == rs)) ? 2'b01 :
 	((ex_RegWrite && ex_lw) && (ex_reg_dst == rt)) ? 2'b01 :
-//        (ex_RegWrite && (ex_reg_dst == rs) && single_jump && !slt_before) ? 2'b11 :
-//        (ex_RegWrite && (ex_reg_dst == rt) && single_jump && !slt_before) ? 2'b11 :
-       2'b00;
-
-
+	((mem_RegWrite && mem_lw) && (mem_reg_dst == rs)) ? 2'b01 :
+	((mem_RegWrite && mem_lw) && (mem_reg_dst == rt)) ? 2'b01 :
+	2'b00;
 
 endmodule

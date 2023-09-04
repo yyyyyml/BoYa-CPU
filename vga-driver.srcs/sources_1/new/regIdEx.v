@@ -21,7 +21,7 @@ module regIdEx(
     input wire[3 - 1:0] RegSrc_in,
     input wire[2 - 1:0] RegDst_in,
     input wire slt_in,
-    input wire[3:0] stall_Ctl,
+    input wire[1:0] stall_Ctl,
     input wire[31:0] lw_stall_data, 
     input wire[4:0] lw_mem_addr,
 
@@ -46,26 +46,12 @@ module regIdEx(
     output reg slt_out
 );
 
-// if rstn/halt, zeroize all registers
 wire zeroize;
 assign zeroize = !rstn;
 
-// state machine for stalling
-reg[1:0] tempState;
-reg[31:0] tempdata1;
-reg[31:0] tempdata2;
-
 always @ (posedge clk) begin
-    if (stall_Ctl[2] == 1 && stall_Ctl[3] == 1 && lw_mem_addr == rs_in) begin
-        tempdata1 <= lw_stall_data;
-        tempState <= 2'b01;
-    end
-    if (stall_Ctl[2] == 1 && stall_Ctl[3] == 1 && lw_mem_addr == rt_in) begin
-        tempdata2 <= lw_stall_data;
-        tempState <= 2'b10;
-    end
 
-    if (zeroize) begin
+    if (zeroize) begin // 初始化清零
         reg1_data_out <= 32'h00000000;
         reg2_data_out <= 32'h00000000;
         save_dst_out <= 32'h00000000;
@@ -85,11 +71,8 @@ always @ (posedge clk) begin
         RegDst_out <= 'b00 ;
         stall_out <= 2'b00;
         slt_out <= 1'b0;
-        tempdata1 <= 32'h00000000;
-        tempdata2 <= 32'h00000000;
-        tempState <= 2'b00;
     end
-    else if(stall_Ctl == 4'b0001) begin
+    else if(stall_Ctl == 2'b00) begin // 没stall的情况，基本正常传
         reg1_data_out <= reg1_data_in;
         reg2_data_out <= reg2_data_in;
         save_dst_out <= save_dst_in;
@@ -107,44 +90,10 @@ always @ (posedge clk) begin
         MemWrite_out <= MemWrite_in;
         RegSrc_out   <= RegSrc_in;
         RegDst_out   <= RegDst_in;
-        stall_out <= 2'b11;
-        slt_out <= slt_in;
-    end
-    else if(stall_Ctl[2] == 0) begin
-        if (tempState == 2'b01) begin
-            reg1_data_out <= tempdata1;
-            reg2_data_out <= reg2_data_in;
-            tempState <= 2'b00;
-        end
-        else if(tempState == 2'b10) begin
-            reg1_data_out <= reg1_data_in;
-            reg2_data_out <= tempdata2;
-            tempState    <= 2'b00;
-        end
-        else begin
-            reg1_data_out <= reg1_data_in;
-            reg2_data_out <= reg2_data_in;
-        end
-
-        save_dst_out <= save_dst_in;
-        rs_out <= rs_in;
-        rt_out <= rt_in;
-        rd_out <= rd_in;
-        sa_out <= sa_in;
-        imm16_out <= imm16_in;
-
-        RegWrite_out <= RegWrite_in;
-        idex_lw_out  <= idex_lw_in;
-        ExtOp_out <= ExtOp_in;
-        ALUSrc_out <= ALUSrc_in;
-        ALUOp_out    <= ALUOp_in;
-        MemWrite_out <= MemWrite_in;
-        RegSrc_out   <= RegSrc_in;
-        RegDst_out   <= RegDst_in;
         stall_out <= 2'b00;
         slt_out <= slt_in;
     end
-    else if((stall_Ctl[2] == 1 && stall_Ctl[3] == 0)) begin
+    else if(stall_Ctl == 2'b01) begin // 有stall，这个寄存器要清零，为了不让这条stall的指令传下去
         reg1_data_out <= 32'h00000000;
         reg2_data_out <= 32'h00000000;
         save_dst_out <= 32'h00000000;
@@ -165,7 +114,7 @@ always @ (posedge clk) begin
         stall_out <= 2'b00;
         slt_out <= 1'b0;
     end
-    else begin
+    else begin // 
 
     end
 end

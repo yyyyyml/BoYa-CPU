@@ -5,8 +5,8 @@ module top(
     input wire clk,
     input wire rstn,
     
-    output wire      hs,
-    output wire      vs,
+    output wire hs,
+    output wire vs,
     output wire[3:0] red,
     output wire[3:0] green,
     output wire[3:0] blue
@@ -61,8 +61,7 @@ vga_top Vga_top(
 wire[31:0] pc;
 wire[31:0] next_pc;
 wire[31:0] instruction;
-wire[3:0] stall_Ctl;
-wire[1:0] stall_op;
+wire[1:0] stall_Ctl; // 过一次寄存器输出的stall信号
 
 pcControl PcControl(
     .clk (clk),
@@ -166,15 +165,10 @@ regsFile RegsFile(
     .alu_res_out (alu_res_out),
     .reg1_data (reg1_data),
     .reg2_data (reg2_data),
-    .stall_signal (stall_op)
+    .stall_signal (stall_Ctl)
 );
 
 wire[31:0] save_dst;
-
-stallUnit StallUnit(
-    .stall_in (stall_op ),
-    .stall_Ctl (stall_Ctl)
-);
 
 pcChoose PcChoose(
     .pc (pc),
@@ -365,7 +359,6 @@ regExMem RegExMem(
     .RegSrc_in(RegSrc_out),
     .RegWrite_in (RegWrite_out),
     .exmem_lw_in (idex_lw_out),
-    .stall_Ctl (stall_Ctl),
     .alu_res_out (alu_res_out),
     .reg2_data_out (reg2_data_mem),
     .save_dst_out (save_dst_mem),
