@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Sep  4 15:38:56 2023
+# Process ID: 16724
+# Current directory: E:/Vivado_workplace/cpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23088 E:\Vivado_workplace\cpu\vga-driver.xpr
+# Log file: E:/Vivado_workplace/cpu/vivado.log
+# Journal file: E:/Vivado_workplace/cpu\vivado.jou
+# Running On: LAPTOP-5BC1LM04, OS: Windows, CPU Frequency: 2895 MHz, CPU Physical cores: 16, Host memory: 17042 MB
+#-----------------------------------------------------------
+start_gui
+open_project E:/Vivado_workplace/cpu/vga-driver.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source testbench.tcl
+run 10 us
+close_sim

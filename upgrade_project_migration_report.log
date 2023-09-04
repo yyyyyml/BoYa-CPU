@@ -1,0 +1,26 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Mon Sep  4 15:36:42 2023
+| Host         : LAPTOP-5BC1LM04 running 64-bit major release  (build 9200)
+| Command      : upgrade_project -migrate_output_products
+| Project_Path : E:/Vivado_workplace/vga-driver-master/vga-driver.xpr
+------------------------------------------------------------------------------------
+
+Project Status Summary
+
+1. Project IP Status
+--------------------
+This project contains 1 IP and 0 Block Designs.
+
+
+1.1 Project IP Instances
++---------+-------------------------+-------------------------------------+-------------------------------------+
+| Instanc | Status                  | Reason                              | Recommendation                      |
+| Name    |                         |                                     |                                     |
++---------+-------------------------+-------------------------------------+-------------------------------------+
+| clk_wiz | Will be Migrated.       |                                     |                                     |
++---------+-------------------------+-------------------------------------+-------------------------------------+
+
+
+
