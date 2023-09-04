@@ -1,17 +1,17 @@
 `timescale 1ns / 1ps
 module dig8_4(
-         input clk,
-         input rst,
-         input [23:0] set_data,
-         output reg[5:0] dig,
-         output reg[7:0] dict,
-         output reg[7:0] dict2
-    );
+    input clk,
+    input rstn,
+    input [23:0] set_data,
+    output reg[5:0] dig,
+    output reg[7:0] dict,
+    output reg[7:0] dict2
+);
     
 reg [15:0] cnt1;
-    always@(posedge clk or negedge rst ) 
+    always@(posedge clk or negedge rstn ) 
     begin
-       if(!rst)
+       if(!rstn)
            cnt1 <= 16'd0;
        else if (cnt1 <= 16'd50000)
            cnt1 <= cnt1 +1'b1;
@@ -20,9 +20,9 @@ reg [15:0] cnt1;
     end
     
     reg clk_low1;
-    always@(posedge clk or negedge rst ) 
+    always@(posedge clk or negedge rstn ) 
     begin
-       if(!rst)
+       if(!rstn)
            clk_low1 <= 1'b0;
        else if (cnt1 < 16'd25000) 
            clk_low1 <= 1'b0;
@@ -31,9 +31,9 @@ reg [15:0] cnt1;
     end
     
     reg [3:0] data;
-    always@(posedge clk or negedge rst) 
+    always@(posedge clk or negedge rstn) 
     begin
-       if(!rst)
+       if(!rstn)
            dict <= 8'd0;
        else 
            begin
@@ -52,9 +52,9 @@ reg [15:0] cnt1;
         end
     end
     
-    always@(posedge clk or negedge rst) 
+    always@(posedge clk or negedge rstn) 
     begin
-       if(!rst)
+       if(!rstn)
            dict2 <= 8'd0;
        else 
            begin
@@ -73,11 +73,11 @@ reg [15:0] cnt1;
         end
     end
 
-//ÂÖÁ÷ÇĞ»»ÊıÂë¹Ü
+//è½®æµåˆ‡æ¢æ•°ç ç®¡
     reg[2:0] cnt2;
-    always@(posedge clk_low1 or negedge rst ) 
+    always@(posedge clk_low1 or negedge rstn ) 
     begin
-       if(!rst)
+       if(!rstn)
            cnt2 <= 3'd0;
        else if (cnt2 < 3'd6)
            cnt2 <= cnt2 + 1'd1;
@@ -85,9 +85,9 @@ reg [15:0] cnt1;
            cnt2 <= 3'd0;
     end
 
-    always@(posedge clk or negedge rst) 
+    always@(posedge clk or negedge rstn) 
     begin
-       if(!rst)
+       if(!rstn)
            dig <= 6'b000000;
        else 
            begin
@@ -102,10 +102,10 @@ reg [15:0] cnt1;
            end
        end
 
-//ÔÚÇĞ»»ÊıÂë¹ÜµÄÍ¬Ê±£¬¸³ÓèÎ»Ñ¡Êı¾İ
-    always@(posedge clk or negedge rst) 
+//åœ¨åˆ‡æ¢æ•°ç ç®¡çš„åŒæ—¶ï¼Œèµ‹äºˆä½é€‰æ•°æ®
+    always@(posedge clk or negedge rstn) 
     begin
-       if(!rst)
+       if(!rstn)
            data <= 4'd0;
        else 
            begin

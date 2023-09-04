@@ -1,14 +1,14 @@
 `timescale 1ns / 1ps
 
 module dataMemory(
-           input wire clk,
-           input wire MemWrite,   // 写使能
-           input wire[11:2] mem_addr,       
-           input wire[31:0] mem_write_data, 
-           
-           output wire[31:0] mem_read_data, 
-           output wire[23:0] set_data
-       );    
+    input wire clk,
+    input wire MemWrite,   // 写使能
+    input wire[11:2] mem_addr,       
+    input wire[31:0] mem_write_data, 
+    
+    output wire[31:0] mem_read_data, 
+    output wire[23:0] set_data
+);    
 
 
 reg[31:0] dataMem[31:0];

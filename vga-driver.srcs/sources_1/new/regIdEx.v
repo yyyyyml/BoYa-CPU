@@ -1,54 +1,54 @@
 `timescale 1ns / 1ps
 
-module IDEXReg(
-           input  wire clk,
-           input  wire rst,
-           input  wire[31:0] reg1_data_in,
-           input  wire[31:0] reg2_data_in,
-           input  wire[31:0] save_dst_in,
-           input  wire[4:0] rs_in,
-           input  wire[4:0] rt_in,
-           input  wire[4:0] rd_in,
-           input  wire[4:0] sa_in,
-           input  wire[15:0] imm16_in,
+module regIdEx(
+    input  wire clk,
+    input  wire rstn,
+    input  wire[31:0] reg1_data_in,
+    input  wire[31:0] reg2_data_in,
+    input  wire[31:0] save_dst_in,
+    input  wire[4:0] rs_in,
+    input  wire[4:0] rt_in,
+    input  wire[4:0] rd_in,
+    input  wire[4:0] sa_in,
+    input  wire[15:0] imm16_in,
 
-           input wire RegWrite_in,
-           input wire idex_lw_in,
-           input wire[2 - 1:0] ExtOp_in,
-           input wire ALUSrc_in,
-           input wire[4 - 1:0] ALUOp_in,
-           input wire MemWrite_in,
-           input wire[3 - 1:0] RegSrc_in,
-           input wire[2 - 1:0] RegDst_in,
-           input wire slt_in,
-           input wire[3:0] stall_Ctl,
-           input wire[31:0] lw_stall_data, 
-           input wire[4:0] lw_mem_addr,
+    input wire RegWrite_in,
+    input wire idex_lw_in,
+    input wire[2 - 1:0] ExtOp_in,
+    input wire ALUSrc_in,
+    input wire[4 - 1:0] ALUOp_in,
+    input wire MemWrite_in,
+    input wire[3 - 1:0] RegSrc_in,
+    input wire[2 - 1:0] RegDst_in,
+    input wire slt_in,
+    input wire[3:0] stall_Ctl,
+    input wire[31:0] lw_stall_data, 
+    input wire[4:0] lw_mem_addr,
 
-           output reg[31:0] reg1_data_out,
-           output reg[31:0] reg2_data_out,
-           output reg[31:0] save_dst_out,
-           output reg[4:0] rs_out,
-           output reg[4:0] rt_out,
-           output reg[4:0] rd_out,
-           output reg[4:0] sa_out,
-           output reg[15:0] imm16_out,
+    output reg[31:0] reg1_data_out,
+    output reg[31:0] reg2_data_out,
+    output reg[31:0] save_dst_out,
+    output reg[4:0] rs_out,
+    output reg[4:0] rt_out,
+    output reg[4:0] rd_out,
+    output reg[4:0] sa_out,
+    output reg[15:0] imm16_out,
 
-           output reg RegWrite_out,
-           output reg idex_lw_out,
-           output reg[2  - 1:0] ExtOp_out,
-           output reg ALUSrc_out,
-           output reg[4 - 1:0] ALUOp_out,
-           output reg MemWrite_out,
-           output reg[3 - 1:0] RegSrc_out,
-           output reg[2 - 1:0] RegDst_out,
-           output reg[1:0] stall_out,
-           output reg slt_out
-       );
+    output reg RegWrite_out,
+    output reg idex_lw_out,
+    output reg[2  - 1:0] ExtOp_out,
+    output reg ALUSrc_out,
+    output reg[4 - 1:0] ALUOp_out,
+    output reg MemWrite_out,
+    output reg[3 - 1:0] RegSrc_out,
+    output reg[2 - 1:0] RegDst_out,
+    output reg[1:0] stall_out,
+    output reg slt_out
+);
 
-// if rst/halt, zeroize all registers
+// if rstn/halt, zeroize all registers
 wire zeroize;
-assign zeroize = !rst;
+assign zeroize = !rstn;
 
 // state machine for stalling
 reg[1:0] tempState;

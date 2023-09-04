@@ -2,14 +2,14 @@
 
 module testbench();
 reg clk;
-reg rst;
+reg rstn;
 
-top Top(clk, rst);
+top Top(clk, rstn);
 initial begin
     clk = 0;
-    rst = 0;
+    rstn = 0;
 
-    #37 rst = 1;
+    #37 rstn = 1;
 end
 
 always

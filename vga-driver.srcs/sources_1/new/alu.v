@@ -1,16 +1,15 @@
 `timescale 1ns / 1ps
 
 module alu(
-           input  wire[31:0] alu_op1,
-           input  wire[31:0] alu_op2,
-           input  wire[4:0] sa,
-           input  wire[4 - 1:0] ALUOp,
+    input  wire[31:0] alu_op1,
+    input  wire[31:0] alu_op2,
+    input  wire[4:0] sa,
+    input  wire[4 - 1:0] ALUOp,
 
-           output wire[31:0] alu_res,
-           output wire overflow,
-
-           output wire zero
-       );
+    output wire[31:0] alu_res,
+    output wire overflow,
+    output wire zero
+);
 
 reg[32:0] alu_tempres;
 assign alu_res = alu_tempres[31:0];
@@ -47,8 +46,7 @@ always @ (*) begin
         4'b0101:
             alu_tempres <= {alu_op1[31], alu_op1} | {alu_op2[31], alu_op2};
         4'b0110:
-            alu_tempres <= (({alu_op1[31], alu_op1} & ~{alu_op2[31], alu_op2}) |
-                                (~{alu_op1[31], alu_op1} & {alu_op2[31], alu_op2}));
+            alu_tempres <= (({alu_op1[31], alu_op1} & ~{alu_op2[31], alu_op2}) | (~{alu_op1[31], alu_op1} & {alu_op2[31], alu_op2}));
         4'b0111:
             alu_tempres <= {alu_op1[31], alu_op1} ^ {alu_op2[31], alu_op2};
         4'b1000:
