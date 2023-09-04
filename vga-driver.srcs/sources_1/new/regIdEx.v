@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 
+// 中间寄存器
 module regIdEx(
     input  wire clk,
     input  wire rstn,
@@ -42,7 +43,6 @@ module regIdEx(
     output reg MemWrite_out,
     output reg[3 - 1:0] RegSrc_out,
     output reg[2 - 1:0] RegDst_out,
-    output reg[1:0] stall_out,
     output reg slt_out
 );
 
@@ -69,7 +69,6 @@ always @ (posedge clk) begin
         MemWrite_out <= 1'b0;
         RegSrc_out <= 3'b000;
         RegDst_out <= 'b00 ;
-        stall_out <= 2'b00;
         slt_out <= 1'b0;
     end
     else if(stall_Ctl == 2'b00) begin // 没stall的情况，基本正常传
@@ -90,7 +89,6 @@ always @ (posedge clk) begin
         MemWrite_out <= MemWrite_in;
         RegSrc_out   <= RegSrc_in;
         RegDst_out   <= RegDst_in;
-        stall_out <= 2'b00;
         slt_out <= slt_in;
     end
     else if(stall_Ctl == 2'b01) begin // 有stall，这个寄存器要清零，为了不让这条stall的指令传下去
@@ -111,7 +109,6 @@ always @ (posedge clk) begin
         MemWrite_out <= 1'b0;
         RegSrc_out <= 3'b000;
         RegDst_out <= 'b00 ;
-        stall_out <= 2'b00;
         slt_out <= 1'b0;
     end
     else begin // 

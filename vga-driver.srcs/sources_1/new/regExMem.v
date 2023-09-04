@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 
+// 中间寄存器
 module regExMem(
     input wire clk,
     input wire rstn,

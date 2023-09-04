@@ -103,13 +103,13 @@ wire[31:0] reg2_data;
 wire zero;
 wire regfile_zero;
 wire RegWrite;
-wire[2 - 1:0] ExtOp;
+wire[1:0] ExtOp;
 wire ALUSrc;
-wire[4 - 1:0] ALUOp;
+wire[3:0] ALUOp;
 wire MemWrite;
-wire[3 - 1:0] RegSrc;
-wire[2 - 1:0] RegDst;
-wire[3 - 1:0] NPCOp;
+wire[2:0] RegSrc;
+wire[1:0] RegDst;
+wire[2:0] NPCOp;
 wire lw;
 wire equal; // 判断beq或bne是否相等
 wire slt_cur; // 当前是不是slt
@@ -182,18 +182,13 @@ pcChoose PcChoose(
 
 wire[31:0] forward_mux_out_1;
 wire[31:0] forward_mux_out_2;
-wire[1:0] stall_pre;
 wire zero2;
 
 jumpConditionCalculate JumpConditionCalculate(
     .reg1_data (reg1_data),
     .reg2_data (reg2_data),
-    .reg1_data_forward (forward_mux_out_1),
-    .reg2_data_forward (forward_mux_out_2),
 //  .single_jump (single_jump),
-    .stall_pre (stall_pre),
     .zero (zero2)
-
 );
 
 wire[31:0] reg1_data_out;
@@ -204,12 +199,12 @@ wire[4:0] rt_out;
 wire[4:0] rd_out;
 wire[4:0] sa_out;
 wire[15:0] imm16_out;
-wire[2 - 1:0] ExtOp_out;
+wire[1:0] ExtOp_out;
 wire  ALUSrc_out;
-wire[4 - 1:0] ALUOp_out;
+wire[3:0] ALUOp_out;
 wire MemWrite_out;
-wire[3 - 1:0] RegSrc_out;
-wire[2 - 1:0] RegDst_out;
+wire[2:0] RegSrc_out;
+wire[1:0] RegDst_out;
 wire[31:0] mem_read_data;
 wire[31:0] mem_read_data_out;
 
@@ -254,7 +249,6 @@ regIdEx RegIdEx(
     .MemWrite_out (MemWrite_out),
     .RegSrc_out (RegSrc_out),
     .RegDst_out (RegDst_out),
-    .stall_out (stall_pre),
     .slt_out (slt_out)
 );
 
