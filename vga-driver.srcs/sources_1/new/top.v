@@ -84,6 +84,7 @@ wire[4:0] rs;
 wire[4:0] rt;
 wire[4:0] rd;
 wire[4:0] sa;
+wire[15:0] imm16;
 wire[25:0] imm26;
 
 assign opcode = instruction[31:26];
