@@ -8,20 +8,20 @@ module instructionDecode(
     input wire equal,
 
     output wire RegWrite,
-    output wire[2 - 1:0] ExtOp,
+    output wire[1:0] ExtOp,
     output wire ALUSrc,
-    output wire[4 - 1:0] ALUOp,
+    output wire[3:0] ALUOp,
     output wire MemWrite,
-    output wire[3 - 1:0] RegSrc,
-    output wire[2 - 1:0] RegDst,
-    output wire[3 - 1:0] NPCOp,
+    output wire[2:0] RegSrc,
+    output wire[1:0] RegDst,
+    output wire[2:0] NPCOp,
     output wire lw,
     output wire slt_cur,
     output wire single_jump
 );
 
 // Init instruction signals
-wire type_r, inst_add, inst_addu, inst_sub, inst_subu, inst_slt, inst_sltu, inst_and, inst_or, inst_nor, inst_xor, inst_sll, 
+wire type_r, inst_add, inst_addu, inst_sub, inst_subu, inst_and, inst_or, inst_nor, inst_xor, inst_slt, inst_sltu, inst_sll, 
     inst_srl, inst_sra, inst_sllv, inst_srlv, inst_srav, inst_jr, inst_addi, inst_addiu, inst_sltiu, 
     inst_andi, inst_ori, inst_xori, inst_lw, inst_sw, inst_beq, inst_bne, inst_j, inst_jal;
 
@@ -32,12 +32,12 @@ assign inst_add = (type_r && func == 6'b100000) ? 1 : 0;
 assign inst_addu = (type_r && func == 6'b100001) ? 1 : 0;
 assign inst_sub = (type_r && func == 6'b100010) ? 1 : 0;
 assign inst_subu = (type_r && func == 6'b100011) ? 1 : 0;
-assign inst_slt = (type_r && func == 6'b101010) ? 1 : 0;
-assign inst_sltu = (type_r && func == 6'b101011) ? 1 : 0;
 assign inst_and = (type_r && func == 6'b100100) ? 1 : 0;
 assign inst_or = (type_r && func == 6'b100101) ? 1 : 0;
 assign inst_nor = (type_r && func == 6'b100111) ? 1 : 0;
 assign inst_xor = (type_r && func == 6'b100110) ? 1 : 0;
+assign inst_slt = (type_r && func == 6'b101010) ? 1 : 0;
+assign inst_sltu = (type_r && func == 6'b101011) ? 1 : 0;
 assign inst_sll = (type_r && func == 6'b000000) ? 1 : 0;
 assign inst_srl = (type_r && func == 6'b000010) ? 1 : 0;
 assign inst_sra = (type_r && func == 6'b000011) ? 1 : 0;
@@ -48,11 +48,11 @@ assign inst_jr = (type_r && func == 6'b001000) ? 1 : 0;
 
 // I
 assign inst_addi = (opcode == 6'b001000) ? 1 : 0;
-assign inst_addiu = (opcode == 6'b001001) ? 1 : 0;
-assign inst_sltiu = (opcode == 6'b001011) ? 1 : 0;
 assign inst_andi = (opcode == 6'b001100) ? 1 : 0;
 assign inst_ori = (opcode == 6'b001101) ? 1 : 0;
 assign inst_xori = (opcode == 6'b001110) ? 1 : 0;
+assign inst_addiu = (opcode == 6'b001001) ? 1 : 0;
+assign inst_sltiu = (opcode == 6'b001011) ? 1 : 0;
 assign inst_lw = (opcode == 6'b100011) ? 1 : 0;
 assign inst_sw = (opcode == 6'b101011) ? 1 : 0;
 assign inst_beq = (opcode == 6'b000100) ? 1 : 0;
@@ -85,16 +85,16 @@ assign ALUOp =
     4'b0000;
 
 assign RegDst =
-    (inst_add || inst_addu || inst_sub || inst_subu || inst_slt || inst_sltu || inst_and || inst_or ||
-    inst_nor || inst_xor || inst_sll || inst_srl || inst_sra || inst_sllv || inst_srlv || inst_srav) ? 
+    (inst_add || inst_addu || inst_sub || inst_subu || inst_and || inst_or || inst_nor || inst_xor || 
+    inst_slt || inst_sltu || inst_sll || inst_srl || inst_sra || inst_sllv || inst_srlv || inst_srav) ? 
     2'b10 :
-    (inst_addi || inst_addiu || inst_sltiu || inst_andi || inst_ori || inst_xori || inst_lw) ? 
+    (inst_addi || inst_addiu|| inst_andi || inst_ori || inst_xori  || inst_sltiu || inst_lw) ? 
     2'b01 :
     (inst_jal) ? 
     2'b11 : 2'b00 ;
 
 assign ALUSrc =
-       (inst_addi || inst_addiu || inst_sltiu || inst_andi || inst_ori || inst_xori || inst_lw || inst_sw) ? 1 : 0;
+    (inst_addi || inst_addiu || inst_andi || inst_ori || inst_xori || inst_sltiu || inst_lw || inst_sw) ? 1 : 0;
 
 assign RegWrite =
     (type_r || inst_addi || inst_addiu ||
@@ -115,7 +115,8 @@ assign RegSrc =
     inst_sll || inst_srl || inst_sra || inst_sllv ||
     inst_srlv || inst_srav) ? 3'b001 :
     (inst_lw) ? 3'b010 : 
-    (inst_jal) ? 3'b100 : 3'b000;
+    (inst_jal) ? 3'b100 : 
+    3'b000;
 
 // ExtOp
 assign ExtOp =
@@ -126,9 +127,9 @@ assign ExtOp =
 // NPCOp
 assign NPCOp =
     // 不跳的
-    (inst_lw || inst_sw || inst_addi || inst_addiu || inst_sltiu || inst_andi || inst_ori ||
-    inst_xori || inst_add || inst_addu || inst_sub || inst_subu || inst_slt || inst_sltu || inst_and ||
-    inst_or || inst_nor || inst_xor || inst_sll || inst_srl || inst_sra || inst_sllv || inst_srlv ||inst_srav) ? 
+    (inst_lw || inst_sw || inst_addi || inst_addiu || inst_andi || inst_ori ||
+    inst_xori || inst_add || inst_addu || inst_sub || inst_subu || inst_and || inst_or || inst_nor || inst_xor || 
+    inst_sltiu || inst_slt || inst_sltu || inst_sll || inst_srl || inst_sra || inst_sllv || inst_srlv ||inst_srav) ? 
     3'b001 :
     // BEQ
     (inst_beq && !equal) ? 3'b001 : // 不跳
@@ -139,7 +140,7 @@ assign NPCOp =
     // J
     (inst_j || inst_jal) ? 3'b010 :
     (inst_j) ? 3'b010 : (inst_jr) ? 3'b100 : 3'b000;
-    // 有用的信号
+    // 有用的输出信号
     assign slt_cur = inst_slt;
     assign single_jump = (inst_beq || inst_bne) ? 1 : 0;
 

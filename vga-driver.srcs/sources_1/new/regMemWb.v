@@ -10,7 +10,7 @@ module regMemWb(
     input wire[31:0] ext_imm_in,
     input wire[4:0] dst_reg_in,
 
-    input wire[3 - 1:0] RegSrc_in,
+    input wire[2:0] RegSrc_in,
     input wire RegWrite_in,
     input wire memwb_lw_in,
 
@@ -20,7 +20,7 @@ module regMemWb(
     output reg[31:0] ext_imm_out,
     output reg[4:0] dst_reg_out,
 
-    output reg[3 - 1:0] RegSrc_out,
+    output reg[2:0] RegSrc_out,
     output reg RegWrite_out,
     output reg memwb_lw_out
 );

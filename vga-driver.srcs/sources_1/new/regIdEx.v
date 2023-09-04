@@ -15,12 +15,12 @@ module regIdEx(
 
     input wire RegWrite_in,
     input wire idex_lw_in,
-    input wire[2 - 1:0] ExtOp_in,
+    input wire[1:0] ExtOp_in,
     input wire ALUSrc_in,
-    input wire[4 - 1:0] ALUOp_in,
+    input wire[3:0] ALUOp_in,
     input wire MemWrite_in,
-    input wire[3 - 1:0] RegSrc_in,
-    input wire[2 - 1:0] RegDst_in,
+    input wire[2:0] RegSrc_in,
+    input wire[1:0] RegDst_in,
     input wire slt_in,
     input wire[1:0] stall_Ctl,
     input wire[31:0] lw_stall_data, 
@@ -37,12 +37,12 @@ module regIdEx(
 
     output reg RegWrite_out,
     output reg idex_lw_out,
-    output reg[2  - 1:0] ExtOp_out,
+    output reg[1:0] ExtOp_out,
     output reg ALUSrc_out,
-    output reg[4 - 1:0] ALUOp_out,
+    output reg[3:0] ALUOp_out,
     output reg MemWrite_out,
-    output reg[3 - 1:0] RegSrc_out,
-    output reg[2 - 1:0] RegDst_out,
+    output reg[2:0] RegSrc_out,
+    output reg[1:0] RegDst_out,
     output reg slt_out
 );
 

@@ -3,7 +3,7 @@
 // 处理立即数扩展
 module immExt(
     input  wire[15:0] imm16,
-    input  wire[2 - 1:0] ExtOp,
+    input  wire[1:0] ExtOp,
 
     output wire[31:0] ext_imm
 );

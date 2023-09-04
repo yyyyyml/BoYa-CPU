@@ -4,7 +4,7 @@ module alu(
     input  wire[31:0] alu_op1,
     input  wire[31:0] alu_op2,
     input  wire[4:0] sa,
-    input  wire[4 - 1:0] ALUOp,
+    input  wire[3:0] ALUOp,
 
     output wire[31:0] alu_res,
     output wire overflow,

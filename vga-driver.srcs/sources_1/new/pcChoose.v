@@ -6,7 +6,7 @@ module pcChoose(
 	input  wire[15:0] imm16,
 	input  wire[25:0] imm26,    
 	input  wire[31:0] rs_data,
-	input  wire[3 - 1:0] NPCOp,  // 控制nextPC
+	input  wire[2:0] NPCOp,  // 控制nextPC
 
 	output wire[31:0] next_pc,
 	output wire[31:0] save_dst    // JAL

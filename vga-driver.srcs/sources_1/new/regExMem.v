@@ -11,7 +11,7 @@ module regExMem(
     input wire[4:0] dst_reg_in,
 
     input wire MemWrite_in,
-    input wire[3 - 1:0] RegSrc_in,
+    input wire[2:0] RegSrc_in,
     input wire RegWrite_in,
     input wire exmem_lw_in,
 
@@ -22,7 +22,7 @@ module regExMem(
     output reg[4:0] dst_reg_out,
 
     output reg MemWrite_out,
-    output reg[3 - 1:0] RegSrc_out,
+    output reg[2:0] RegSrc_out,
     output reg RegWrite_out,
     output reg exmem_lw_out
 );

@@ -304,7 +304,7 @@ wire[1:0] forward_A;
 wire[1:0] forward_B;
 
 wire  MemWrite_mem;
-wire[3 - 1:0] RegSrc_mem;
+wire[2:0] RegSrc_mem;
 
 
 wire[31:0] reg2_data_mem;
@@ -377,7 +377,7 @@ dataMemory DataMemory(
 
 wire[31:0] alu_res_wb;
 wire[31:0] ext_imm_wb;
-wire[3 - 1:0] RegSrc_wb;
+wire[2:0] RegSrc_wb;
 
 wire[31:0] save_dst_wb;
 wire memwb_lw_out;

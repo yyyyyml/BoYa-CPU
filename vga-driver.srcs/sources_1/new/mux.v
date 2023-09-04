@@ -2,7 +2,7 @@
 
 // 使用的全部选择器
 module reg_dst_mux(
-	input  wire[2 - 1:0] reg_dst,
+	input  wire[1:0] reg_dst,
 	input  wire[4:0] rt,
 	input  wire[4:0] rd,
 			
@@ -30,7 +30,7 @@ assign mux_out = (alu_src == 1'b0) ? rt : imm;
 endmodule
 
 module reg_src_mux(
-	input  wire[3 - 1:0] reg_src,
+	input  wire[2:0] reg_src,
 	input  wire[31:0] alu_res,
 	input  wire[31:0] mem_read_data,
 	input  wire[31:0] ext_imm,
