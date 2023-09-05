@@ -10,3 +10,10 @@
 # Journal file: E:/Vivado_workplace/BoYa-CPU\vivado.jou
 # Running On: LAPTOP-5BC1LM04, OS: Windows, CPU Frequency: 2895 MHz, CPU Physical cores: 16, Host memory: 17042 MB
 #-----------------------------------------------------------
+start_gui
+open_project E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source testbench.tcl
+relaunch_sim
+run 15.5 us
