@@ -1,0 +1,770 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Sep  2 15:15:05 2023
+# Process ID: 14420
+# Current directory: D:/Vivado/vivado file/vga-driver-master/vga-driver.runs/synth_1
+# Command line: vivado.exe -log vga_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vga_top.tcl
+# Log file: D:/Vivado/vivado file/vga-driver-master/vga-driver.runs/synth_1/vga_top.vds
+# Journal file: D:/Vivado/vivado file/vga-driver-master/vga-driver.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source vga_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Vivado/vivado file/vga-driver-master/vga-driver.srcs'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/vivados/Vivado/2019.2/data/ip'.
+Command: synth_design -top vga_top -part xc7a35tcsg324-1
+Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'clk_wiz' is locked:
+* IP definition 'Clocking Wizard (5.4)' for IP 'clk_wiz' (customized with software release 2017.2) has a newer major version in the IP Catalog. * IP definition 'Clocking Wizard (5.4)' for IP 'clk_wiz' (customized with software release 2017.2) has a different revision in the IP Catalog.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12636 
+WARNING: [Synth 8-2507] parameter declaration becomes local in vga_top with formal parameter declaration list [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/vga_top.v:156]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 852.961 ; gain = 241.320
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'vga_top' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/vga_top.v:8]
+	Parameter H_DISPLAY bound to: 11'b10000000000 
+	Parameter H_FRONT_PORCH bound to: 11'b00000011000 
+	Parameter H_SYNC_PULSE bound to: 11'b00010001000 
+	Parameter H_BACK_PORCH bound to: 11'b00010100000 
+	Parameter H_TOTAL bound to: 11'b10101000000 
+	Parameter V_DISPLAY bound to: 10'b1100000000 
+	Parameter V_FRONT_PORCH bound to: 10'b0000000011 
+	Parameter V_SYNC_PULSE bound to: 10'b0000000110 
+	Parameter V_BACK_PORCH bound to: 10'b0000011101 
+	Parameter V_TOTAL bound to: 10'b1100100110 
+	Parameter basic_h_Location bound to: 500 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/top.v:10]
+INFO: [Synth 8-6157] synthesizing module 'pcControl' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/pcControl.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'pcControl' (1#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/pcControl.v:9]
+INFO: [Synth 8-6157] synthesizing module 'instructionMemory' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/instructionMemory.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'instructionMemory' (2#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/instructionMemory.v:9]
+INFO: [Synth 8-6157] synthesizing module 'controlUnit' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/controlUnit.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'controlUnit' (3#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/controlUnit.v:7]
+INFO: [Synth 8-6157] synthesizing module 'regFile' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/regFile.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'regFile' (4#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/regFile.v:10]
+INFO: [Synth 8-6157] synthesizing module 'stallUnit' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/stallUnit.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'stallUnit' (5#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/stallUnit.v:9]
+INFO: [Synth 8-6157] synthesizing module 'pcChoose' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/pcChoose.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'pcChoose' (6#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/pcChoose.v:10]
+INFO: [Synth 8-6157] synthesizing module 'singleJumpPredict' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/singleJumpPredict.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'singleJumpPredict' (7#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/singleJumpPredict.v:5]
+INFO: [Synth 8-6157] synthesizing module 'IDEXReg' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/IDEXReg.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'IDEXReg' (8#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/IDEXReg.v:9]
+INFO: [Synth 8-6157] synthesizing module 'immExt' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/immExt.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'immExt' (9#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/immExt.v:9]
+INFO: [Synth 8-6157] synthesizing module 'reg_dst_mux' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'reg_dst_mux' (10#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:7]
+INFO: [Synth 8-6157] synthesizing module 'alu_src_mux' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'alu_src_mux' (11#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:24]
+INFO: [Synth 8-6157] synthesizing module 'alu' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/alu.v:10]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/alu.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (12#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/alu.v:10]
+WARNING: [Synth 8-7023] instance 'ALU' of module 'alu' has 7 connections declared, but only 6 given [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/top.v:319]
+INFO: [Synth 8-6157] synthesizing module 'equal_mux' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'equal_mux' (13#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:68]
+INFO: [Synth 8-6157] synthesizing module 'forwardUnit' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/ForwardUnit.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'forwardUnit' (14#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/ForwardUnit.v:10]
+INFO: [Synth 8-6157] synthesizing module 'forward_mux' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'forward_mux' (15#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:53]
+INFO: [Synth 8-6157] synthesizing module 'EXMemReg' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/EXMemReg.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'EXMemReg' (16#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/EXMemReg.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dataMemory' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/dataMemory.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'dataMemory' (17#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/dataMemory.v:10]
+INFO: [Synth 8-6157] synthesizing module 'MemWbReg' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/MemWbReg.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'MemWbReg' (18#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/MemWbReg.v:9]
+INFO: [Synth 8-6157] synthesizing module 'reg_src_mux' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'reg_src_mux' (19#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/mux.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'top' (20#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/top.v:10]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz' [D:/Vivado/vivado file/vga-driver-master/vga-driver.runs/synth_1/.Xil/Vivado-14420-LAPTOP-BH29KTF0/realtime/clk_wiz_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz' (21#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.runs/synth_1/.Xil/Vivado-14420-LAPTOP-BH29KTF0/realtime/clk_wiz_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'vga_top' (22#1) [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/vga_top.v:8]
+WARNING: [Synth 8-3331] design EXMemReg has unconnected port stall_Ctl[2]
+WARNING: [Synth 8-3331] design EXMemReg has unconnected port stall_Ctl[1]
+WARNING: [Synth 8-3331] design EXMemReg has unconnected port stall_Ctl[0]
+WARNING: [Synth 8-3331] design regFile has unconnected port single_jump
+WARNING: [Synth 8-3331] design regFile has unconnected port slt_before
+WARNING: [Synth 8-3331] design controlUnit has unconnected port rst
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[4]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[3]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[2]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[1]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[0]
+WARNING: [Synth 8-3331] design pcControl has unconnected port stall_Ctl[3]
+WARNING: [Synth 8-3331] design pcControl has unconnected port stall_Ctl[2]
+WARNING: [Synth 8-3331] design pcControl has unconnected port stall_Ctl[1]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wen
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[31]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[30]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[29]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[28]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[27]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[26]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[25]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[24]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[23]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[22]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[21]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[20]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[19]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[18]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[17]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[16]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[15]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[14]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[13]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[12]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[11]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[10]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[9]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[8]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[7]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[6]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[5]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[4]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[3]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[2]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[1]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[0]
+WARNING: [Synth 8-3331] design vga_top has unconnected port addr[3]
+WARNING: [Synth 8-3331] design vga_top has unconnected port addr[2]
+WARNING: [Synth 8-3331] design vga_top has unconnected port addr[1]
+WARNING: [Synth 8-3331] design vga_top has unconnected port addr[0]
+WARNING: [Synth 8-3331] design vga_top has unconnected port rdata
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 916.270 ; gain = 304.629
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 916.270 ; gain = 304.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 916.270 ; gain = 304.629
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 916.270 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/ip/clk_wiz/clk_wiz/clk_wiz_in_context.xdc] for cell 'u_clk_wiz'
+Finished Parsing XDC File [d:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/ip/clk_wiz/clk_wiz/clk_wiz_in_context.xdc] for cell 'u_clk_wiz'
+Parsing XDC File [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/constrs_1/new/constraint.xdc]
+Finished Parsing XDC File [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/constrs_1/new/constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/constrs_1/new/constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/vga_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/vga_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1044.617 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1044.617 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1044.617 ; gain = 432.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1044.617 ; gain = 432.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  {d:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/ip/clk_wiz/clk_wiz/clk_wiz_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  {d:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/ip/clk_wiz/clk_wiz/clk_wiz_in_context.xdc}, line 4).
+Applied set_property DONT_TOUCH = true for u_clk_wiz. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1044.617 ; gain = 432.977
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "instMem" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/singleJumpPredict.v:23]
+INFO: [Synth 8-4471] merging register 'reg_green_reg[3:0]' into 'reg_red_reg[3:0]' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/vga_top.v:97]
+INFO: [Synth 8-4471] merging register 'reg_blue_reg[3:0]' into 'reg_red_reg[3:0]' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/vga_top.v:98]
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digital" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'alu_tempres_reg' [D:/Vivado/vivado file/vga-driver-master/vga-driver.srcs/sources_1/new/alu.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1044.617 ; gain = 432.977
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 2     
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input     23 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
++---XORs : 
+	   2 Input     33 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 47    
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 2     
+	  18 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 20    
+	   3 Input     32 Bit        Muxes := 4     
+	   2 Input     23 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	  11 Input     13 Bit        Muxes := 6     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 10    
+	   4 Input      5 Bit        Muxes := 1     
+	  14 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 62    
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 11    
+	   5 Input      2 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 88    
+	   3 Input      1 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module vga_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	  11 Input     13 Bit        Muxes := 6     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 60    
+	   2 Input      1 Bit        Muxes := 7     
+	   6 Input      1 Bit        Muxes := 6     
+Module pcControl 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module instructionMemory 
+Detailed RTL Component Info : 
++---Muxes : 
+	  18 Input     32 Bit        Muxes := 1     
+Module controlUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	  14 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 60    
+Module regFile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   5 Input      2 Bit        Muxes := 1     
+Module stallUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 1     
+Module pcChoose 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+Module singleJumpPredict 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 2     
+Module IDEXReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 7     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 8     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 12    
+	   3 Input      1 Bit        Muxes := 1     
+Module immExt 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+Module reg_dst_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      5 Bit        Muxes := 1     
+Module alu_src_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 1     
++---XORs : 
+	   2 Input     33 Bit         XORs := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 1     
+Module equal_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module forwardUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module forward_mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+Module EXMemReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+Module dataMemory 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 5     
+Module MemWbReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     23 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     23 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design EXMemReg has unconnected port stall_Ctl[2]
+WARNING: [Synth 8-3331] design EXMemReg has unconnected port stall_Ctl[1]
+WARNING: [Synth 8-3331] design EXMemReg has unconnected port stall_Ctl[0]
+WARNING: [Synth 8-3331] design regFile has unconnected port single_jump
+WARNING: [Synth 8-3331] design regFile has unconnected port slt_before
+WARNING: [Synth 8-3331] design controlUnit has unconnected port rst
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[4]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[3]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[2]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[1]
+WARNING: [Synth 8-3331] design controlUnit has unconnected port sa[0]
+WARNING: [Synth 8-3331] design instructionMemory has unconnected port instruction_addr[11]
+WARNING: [Synth 8-3331] design instructionMemory has unconnected port instruction_addr[10]
+WARNING: [Synth 8-3331] design instructionMemory has unconnected port instruction_addr[9]
+WARNING: [Synth 8-3331] design instructionMemory has unconnected port instruction_addr[8]
+WARNING: [Synth 8-3331] design instructionMemory has unconnected port instruction_addr[7]
+WARNING: [Synth 8-3331] design pcControl has unconnected port stall_Ctl[3]
+WARNING: [Synth 8-3331] design pcControl has unconnected port stall_Ctl[2]
+WARNING: [Synth 8-3331] design pcControl has unconnected port stall_Ctl[1]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wen
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[31]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[30]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[29]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[28]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[27]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[26]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[25]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[24]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[23]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[22]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[21]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[20]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[19]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[18]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[17]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[16]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[15]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[14]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[13]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[12]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[11]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[10]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[9]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[8]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[7]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[6]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[5]
+WARNING: [Synth 8-3331] design vga_top has unconnected port wdata[4]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/rs_out_reg[4]' (FDRE) to 'CPUTop/IDEXREG/rt_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/sa_out_reg[3]' (FDRE) to 'CPUTop/IDEXREG/sa_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/sa_out_reg[2]' (FDRE) to 'CPUTop/IDEXREG/sa_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[15]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[14]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[13]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[9]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[8]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[6]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/stall_out_reg[0]' (FDRE) to 'CPUTop/IDEXREG/stall_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[23]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[24]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[25]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[26]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[27]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[28]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[29]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/cnt_reg[30]' (FDC) to 'CPUTop/cnt_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (CPUTop/\cnt_reg[31] )
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/rd_out_reg[3]' (FDRE) to 'CPUTop/IDEXREG/rd_out_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (CPUTop/IDEXREG/\rt_out_reg[4] )
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/rd_out_reg[4]' (FDRE) to 'CPUTop/IDEXREG/rd_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'reg_red_reg[0]' (FDE) to 'reg_red_reg[3]'
+INFO: [Synth 8-3886] merging instance 'reg_red_reg[1]' (FDE) to 'reg_red_reg[3]'
+INFO: [Synth 8-3886] merging instance 'reg_red_reg[2]' (FDE) to 'reg_red_reg[3]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[30]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[28]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[29]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[25]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[24]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[22]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[15]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[14]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[13]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[9]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[8]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/EXMemREG/ext_imm_out_reg[6]' (FDR) to 'CPUTop/EXMemREG/ext_imm_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[30]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[28]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[29]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[25]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[25]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[24]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[24]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[22]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[22]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[15]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[14]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[13]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[9]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[8]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/MemWbREG/ext_imm_out_reg[6]' (FDR) to 'CPUTop/MemWbREG/ext_imm_out_reg[4]'
+WARNING: [Synth 8-3332] Sequential element (alu_tempres_reg[32]) is unused and will be removed from module alu.
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/sa_out_reg[4]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/sa_out_reg[1]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/sa_out_reg[0]' (FDRE) to 'CPUTop/IDEXREG/imm16_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[12]' (FDRE) to 'CPUTop/IDEXREG/rd_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[11]' (FDRE) to 'CPUTop/IDEXREG/rd_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'CPUTop/IDEXREG/imm16_out_reg[4]' (FDRE) to 'CPUTop/IDEXREG/rd_out_reg[2]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1044.617 ; gain = 432.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++---------------+------------+-----------+----------------------+--------------+
+|Module Name    | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++---------------+------------+-----------+----------------------+--------------+
+|CPUTop/RegFile | genReg_reg | Implied   | 32 x 32              | RAM32M x 12	 | 
++---------------+------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1044.617 ; gain = 432.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1044.617 ; gain = 432.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++---------------+------------+-----------+----------------------+--------------+
+|Module Name    | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++---------------+------------+-----------+----------------------+--------------+
+|CPUTop/RegFile | genReg_reg | Implied   | 32 x 32              | RAM32M x 12	 | 
++---------------+------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\CPUTop/IDEXREG/ALUOp_out_reg[2] )
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[31]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[30]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[29]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[28]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[27]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[26]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[25]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[24]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[23]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[22]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[21]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[20]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[19]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[18]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[17]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[16]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[15]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[14]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[13]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[12]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[11]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[10]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[9]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[8]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[7]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[6]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[5]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[4]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[3]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[2]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[1]) is unused and will be removed from module vga_top.
+WARNING: [Synth 8-3332] Sequential element (CPUTop/ALU/alu_tempres_reg[0]) is unused and will be removed from module vga_top.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1098.160 ; gain = 486.520
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1103.711 ; gain = 492.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1103.711 ; gain = 492.070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1103.711 ; gain = 492.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1103.711 ; gain = 492.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1103.711 ; gain = 492.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1103.711 ; gain = 492.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz       |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |clk_wiz |     1|
+|2     |BUFG    |     1|
+|3     |CARRY4  |    64|
+|4     |LUT1    |     5|
+|5     |LUT2    |   176|
+|6     |LUT3    |   226|
+|7     |LUT4    |   217|
+|8     |LUT5    |   371|
+|9     |LUT6    |   894|
+|10    |MUXF7   |   161|
+|11    |RAM32M  |    12|
+|12    |FDCE    |    56|
+|13    |FDRE    |  1505|
+|14    |IBUF    |     1|
+|15    |OBUF    |    14|
++------+--------+------+
+
+Report Instance Areas: 
++------+-----------------+--------------+------+
+|      |Instance         |Module        |Cells |
++------+-----------------+--------------+------+
+|1     |top              |              |  3704|
+|2     |  CPUTop         |top           |  3509|
+|3     |    Alu_src_mux  |alu_src_mux   |    64|
+|4     |    DataMemory   |dataMemory    |  1539|
+|5     |    EXMemREG     |EXMemReg      |   285|
+|6     |    Forward_mux1 |forward_mux   |    35|
+|7     |    Forward_mux2 |forward_mux_0 |    35|
+|8     |    IDEXREG      |IDEXReg       |  1023|
+|9     |    MemWbREG     |MemWbReg      |   196|
+|10    |    PcControl    |pcControl     |   188|
+|11    |    RegFile      |regFile       |    12|
+|12    |    Reg_dst_mux  |reg_dst_mux   |     5|
+|13    |    Reg_src_mux  |reg_src_mux   |    64|
+|14    |    StallUnit    |stallUnit     |     1|
++------+-----------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1103.711 ; gain = 492.070
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 91 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1103.711 ; gain = 363.723
+Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1103.711 ; gain = 492.070
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 1103.711 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 237 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1103.711 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+133 Infos, 136 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 1103.711 ; gain = 764.477
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1103.711 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Vivado/vivado file/vga-driver-master/vga-driver.runs/synth_1/vga_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file vga_top_utilization_synth.rpt -pb vga_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Sep  2 15:16:05 2023...

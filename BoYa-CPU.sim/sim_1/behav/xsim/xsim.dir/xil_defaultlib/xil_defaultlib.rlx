@@ -1,0 +1,23 @@
+0.7
+2020.2
+Oct 19 2021
+03:16:22
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sim_1/new/testbench.v,1693829906,verilog,,,,testbench,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/ForwardUnit.v,1693830595,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/alu.v,,forwardUnit,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/alu.v,1693837389,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/dataMemory.v,,alu,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/dataMemory.v,1693830609,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/immExt.v,,dataMemory,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/immExt.v,1693837381,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/instructionDecode.v,,immExt,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/instructionDecode.v,1693892068,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/instructionMemory.v,,instructionDecode,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/instructionMemory.v,1693830472,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/jumpConditionCalculate.v,,instructionMemory,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/jumpConditionCalculate.v,1693835408,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/mux.v,,jumpConditionCalculate,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/mux.v,1693837404,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/pcChoose.v,,alu_src_mux;equal_mux;forward_mux;reg_dst_mux;reg_src_mux,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/params.vh,1693834869,verilog,,,,,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/pcChoose.v,1693837411,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/pcControl.v,,pcChoose,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/pcControl.v,1693834238,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regExMem.v,,pcControl,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regExMem.v,1693837420,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regIdEx.v,,regExMem,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regIdEx.v,1693837444,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regMemWb.v,,regIdEx,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regMemWb.v,1693837451,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regsFile.v,,regMemWb,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/regsFile.v,1693834666,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/top.v,,regsFile,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/top.v,1693837476,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/vga_top.v,,top,,,,,,,,
+E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/vga_top.v,1693835260,verilog,,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sim_1/new/testbench.v,E:/Vivado_workplace/BoYa-CPU/BoYa-CPU.srcs/sources_1/new/params.vh,vga_top,,,,,,,,

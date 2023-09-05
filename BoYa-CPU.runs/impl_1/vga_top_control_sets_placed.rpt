@@ -1,0 +1,122 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Sat Sep  2 15:16:44 2023
+| Host         : LAPTOP-BH29KTF0 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file vga_top_control_sets_placed.rpt
+| Design       : vga_top
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    44 |
+|    Minimum number of control sets                        |    44 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    36 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    44 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    39 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |              24 |            7 |
+| No           | Yes                   | No                     |             275 |           83 |
+| Yes          | No                    | No                     |            1036 |          388 |
+| Yes          | No                    | Yes                    |              32 |           10 |
+| Yes          | Yes                   | No                     |             205 |           86 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------+-------------------------------------------+----------------------+------------------+----------------+
+|       Clock Signal       |               Enable Signal               |   Set/Reset Signal   | Slice Load Count | Bel Load Count |
++--------------------------+-------------------------------------------+----------------------+------------------+----------------+
+|  u_clk_wiz/inst/clk_out1 |                                           | p_0_in               |                1 |              1 |
+|  u_clk_wiz/inst/clk_out1 |                                           | v_reg_i_1_n_0        |                1 |              1 |
+|  u_clk_wiz/inst/clk_out1 |                                           | CPUTop/IDEXREG/SR[0] |                5 |             11 |
+|  u_clk_wiz/inst/clk_out1 | v_Location                                | CPUTop/IDEXREG/SR[0] |                4 |             11 |
+|  u_clk_wiz/inst/clk_out1 | reg_red[3]_i_1_n_0                        |                      |                2 |             12 |
+|  clk_IBUF                |                                           | CPUTop/IDEXREG/SR[0] |                7 |             24 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_21[0] |                      |               11 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/E[0]                      | CPUTop/IDEXREG/SR[0] |               10 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/RegWrite_out_reg_0[0]     | CPUTop/IDEXREG/SR[0] |                8 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_16[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_11[0] |                      |               16 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_15[0] |                      |                7 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_28[0] |                      |               11 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_8[0]  |                      |               11 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_9[0]  |                      |                9 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_24[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_29[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_18[0] |                      |               12 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_19[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_3[0]  |                      |               12 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_5[0]  |                      |               10 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_20[0] |                      |               11 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_30[0] |                      |               15 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_27[0] |                      |               10 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_7[0]  |                      |               10 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_2[0]  |                      |               14 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_1[0]  |                      |               14 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_25[0] |                      |               12 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_31[0] |                      |                9 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_10[0] |                      |               10 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_26[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_17[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_6[0]  |                      |               12 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_22[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_23[0] |                      |                8 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_13[0] |                      |               12 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_14[0] |                      |               13 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_12[0] |                      |               14 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_4[0]  |                      |               16 |             32 |
+|  clk_0                   | CPUTop/IDEXREG/p_0_in                     | CPUTop/IDEXREG/SR[0] |               10 |             32 |
+|  clk_0                   | CPUTop/EXMemREG/alu_res_out_reg[11]_32[0] |                      |               16 |             32 |
+|  clk_0                   | CPUTop/MemWbREG/RegWrite_wb               |                      |               12 |             96 |
+|  clk_0                   | CPUTop/IDEXREG/reg1_data_out[31]_i_1_n_0  | CPUTop/IDEXREG/SR[0] |               64 |            130 |
+|  clk_0                   |                                           | CPUTop/IDEXREG/SR[0] |               76 |            262 |
++--------------------------+-------------------------------------------+----------------------+------------------+----------------+
+
+
